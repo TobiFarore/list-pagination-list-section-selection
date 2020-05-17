@@ -45,7 +45,7 @@ function sectionSelection (list, section) {
   }
 
   for (let index = 0; index < list.length; index++) {
-    if(list[index] >= startIndex && list[index] <= endIndex) {
+    if(index >= startIndex && index <= endIndex) {
       list[index].style.color = 'firebrick';
     }
     
