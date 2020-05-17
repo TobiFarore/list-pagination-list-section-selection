@@ -29,17 +29,31 @@ const perPage = 2;
 
 // 1. Create a function called sectionSelection - Give it two parameters: list, section
 // Inside the function body, do the following tasks
-
-  // 1a. Uncomment the following two variables and place them inside the function body.
-  // const startIndex = (section * perPage) - perPage;
-  // const endIndex = (section * perPage) - 1;
-
+// 1a. Uncomment the following two variables and place them inside the function body.
   // 1b. Loop over the list parameter and set the style.color of each list item to 'whitesmoke'
 
   // 1c. Loop over the list parameter again
       // Add a conditional inside the loop
       // If the current loop index is >= the `startIndex` variable && the current loop index <= the `endIndex` variable
       // Set the style.color of the the list item to 'green', or your favorite color
+
+function sectionSelection (list, section) {
+  const startIndex = (section * perPage) - perPage;
+  const endIndex = (section * perPage) - 1;
+  for (let i =0; i < list.length; i++) {
+    list[i].style.color = 'whitesmoke';
+  }
+
+  for (let index = 0; index < list.length; index++) {
+    if(list[index] >= startIndex && list[index] <= endIndex) {
+      list[index].style.color = 'firebrick';
+    }
+    
+  }
+}
+  
+
+
 
 
   // 2. Invoke the sectionSelection function in the event listeners below
@@ -53,7 +67,7 @@ const perPage = 2;
 
 /* btn1 listener */
 btn1.addEventListener('click', () => {
-
+  sectionSelection(listItems, 1);
   // Invoke your sectionSelection function here - Arguments: listItems, 1
 
   // Helpful log statement to test function
@@ -63,7 +77,7 @@ btn1.addEventListener('click', () => {
 
 /* btn2 listener */
 btn2.addEventListener('click', () => {
-
+  sectionSelection(listItems, 2);
   // Invoke your sectionSelection function here - Arguments: listItems, 2
 
   // Helpful log statement to test function
@@ -73,7 +87,7 @@ btn2.addEventListener('click', () => {
 
 /* btn3 listener */
 btn3.addEventListener('click', () => {
-
+  sectionSelection(listItems, 3);
   // Invoke your sectionSelection function here - Arguments: listItems, 3
 
   // Helpful log statement to test function
